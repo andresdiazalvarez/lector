@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lector de documentos en voz alta, privado y gratuito.">
+  <title>Lector — Escucha tus documentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="lector.bundle.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Lector, inicio"><span class="brand-mark">L</span><span>Lector</span></a>
+    <div class="privacy"><span></span>Tus documentos se procesan en este dispositivo</div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <span class="eyebrow">TU LECTOR PERSONAL</span>
+      <h1>Escucha tus documentos.<br><em>A tu ritmo.</em></h1>
+      <p>Carga cualquier texto y conviértelo en audio al instante.</p>
+    </section>
+
+    <section class="workspace" aria-label="Lector de documentos">
+      <div class="dropzone" id="dropzone" role="button" tabindex="0">
+        <input id="file-input" type="file" accept=".pdf,.docx,.doc,.txt,.rtf,.html,.htm,.md,.csv,.json">
+        <span class="upload-icon">↥</span>
+        <div><strong id="upload-title">Arrastra tu documento aquí</strong><small>o haz clic para elegir un archivo</small></div>
+        <span class="formats">PDF · WORD (.DOCX) · TXT · RTF · HTML · MD · CSV · JSON</span>
+      </div>
+      <div class="error" id="error" role="alert" hidden></div>
+
+      <article class="player">
+        <div class="document-head">
+          <div class="file-icon">Aa</div>
+          <div class="file-data"><span>LEYENDO AHORA</span><h2 id="file-name">Texto de bienvenida</h2></div>
+          <div class="document-meta"><b id="word-count">0</b><span>palabras</span></div>
+        </div>
+
+        <div class="text-preview" id="text-preview" aria-live="polite"></div>
+
+        <div class="timeline">
+          <input id="timeline" aria-label="Posición de lectura" type="range" min="0" max="1" value="0">
+          <div><span id="elapsed">0:00</span><span id="remaining">-0:00</span></div>
+        </div>
+
+        <div class="speed-row">
+          <span>VELOCIDAD</span>
+          <div id="speeds">
+            <button class="active" data-speed="1">1×</button><button data-speed="1.25">1,25×</button><button data-speed="1.75">1,75×</button><button data-speed="2">2×</button>
+          </div>
+        </div>
+
+        <div class="main-controls">
+          <button class="section-button" id="previous" aria-label="Párrafo anterior"><span>│◀</span><small>Anterior</small></button>
+          <button class="play-button" id="play" aria-label="Reproducir">▶</button>
+          <button class="section-button" id="next" aria-label="Párrafo siguiente"><span>▶│</span><small>Siguiente</small></button>
+        </div>
+
+        <div class="jump-controls">
+          <button data-jump="-30"><span>↶</span><b>30</b><small>seg</small></button>
+          <button data-jump="-10"><span>↶</span><b>10</b><small>seg</small></button>
+          <button data-jump="10"><span>↷</span><b>10</b><small>seg</small></button>
+          <button data-jump="30"><span>↷</span><b>30</b><small>seg</small></button>
+        </div>
+
+        <div class="voice-row"><label for="voice">Voz</label><select id="voice"></select></div>
+      </article>
+
+      <details class="paste-box">
+        <summary>Pegar o editar texto directamente</summary>
+        <textarea id="editor" aria-label="Texto para leer"></textarea>
+      </details>
+    </section>
+  </main>
+
+  <footer><span>Privado por diseño</span><span>•</span><span>Sin cuentas</span><span>•</span><span>Sin subir archivos a servidores</span></footer>
+</body>
+</html>
