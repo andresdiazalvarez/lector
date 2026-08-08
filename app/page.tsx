@@ -3,7 +3,7 @@
 import { ChangeEvent, DragEvent, useEffect, useMemo, useRef, useState } from "react";
 
 const SPEEDS = [1, 1.25, 1.75, 2];
-const SAMPLE = `Bienvenido a Ector. Esta aplicación convierte tus documentos en una experiencia de escucha sencilla y privada.\n\nCarga un archivo o pega tu propio texto. Después podrás iniciar la lectura, cambiar la velocidad y saltar hacia delante o hacia atrás sin perderte.`;
+const SAMPLE = `Bienvenido a Lector. Esta aplicación convierte tus documentos en una experiencia de escucha sencilla y privada.\n\nCarga un archivo o pega tu propio texto. Después podrás iniciar la lectura, cambiar la velocidad y saltar hacia delante o hacia atrás sin perderte.`;
 
 function cleanText(value: string) {
   return value.replace(/\r/g, "").replace(/[ \t]+/g, " ").replace(/\n{3,}/g, "\n\n").trim();
@@ -213,9 +213,9 @@ export default function Home() {
   return (
     <main>
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="Ector, inicio">
-          <span className="brandMark">E</span>
-          <span>Ector</span>
+        <a className="brand" href="#top" aria-label="Lector, inicio">
+          <span className="brandMark">L</span>
+          <span>Lector</span>
         </a>
         <div className="privacy"><span /> Tus documentos se procesan en este dispositivo</div>
       </header>

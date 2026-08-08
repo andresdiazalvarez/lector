@@ -6,7 +6,7 @@ const dmSans = DM_Sans({ variable: "--font-sans", subsets: ["latin"] });
 const libre = Libre_Baskerville({ variable: "--font-serif", subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
-  title: "Ector — Escucha tus documentos",
+  title: "Lector — Escucha tus documentos",
   description: "Convierte documentos en voz y escúchalos a tu ritmo, directamente en tu dispositivo.",
   icons: { icon: "/favicon.svg" },
 };
